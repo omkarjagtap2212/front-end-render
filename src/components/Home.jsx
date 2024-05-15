@@ -5,9 +5,9 @@ import axios from "axios"
 const Home = () => {
     const checkoutHandler = async (amount) => {
 
-        const { data: { key } } = await axios.get("https://www.omkarjagtap.work/api/getkey")
+        const { data: { key } } = await axios.get("https://aws-backend-payment-3.onrender.com/api/getkey")
 
-        const { data: { order } } = await axios.post("https://www.omkarjagtap.work/api/checkout", {
+        const { data: { order } } = await axios.post("https://aws-backend-payment-3.onrender.com/api/checkout", {
             amount
         })
         var options = {
@@ -19,7 +19,7 @@ const Home = () => {
             "image": "https://pbs.twimg.com/profile_images/1738592369732403200/DP8LOnap_400x400.jpg",
              
             "order_id":order.id,
-            "callback_url": "https://www.omkarjagtap.work/api/paymentVerification",
+            "callback_url": "https://aws-backend-payment-3.onrender.com/api/paymentVerification",
             "prefill": {
                 "name": "Master Jagtap",
                 "email": "gaurav.kumar@example.com",
